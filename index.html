@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agente Nano · Programa interactivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@400;600;700;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="css/estilo.css">
+<meta name="theme-color" content="#0A0518">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ============ S01 · INICIO ============ -->
+<section class="screen" id="s-inicio" aria-label="Inicio">
+  <div class="inicio">
+    <svg class="inicio-rueda" viewBox="0 0 400 340" aria-hidden="true"><defs>
+      <radialGradient id="ini-brillo"><stop offset="0" stop-color="#49A6FF" stop-opacity=".55"/><stop offset="1" stop-color="#7A4DF0" stop-opacity="0"/></radialGradient>
+      <radialGradient id="ini-nucleo"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#bfe0ff"/><stop offset=".7" stop-color="#49A6FF"/><stop offset="1" stop-color="#7A4DF0"/></radialGradient>
+      <linearGradient id="ini-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dce4"/><stop offset="1" stop-color="#8a8fa0"/></linearGradient>
+      <linearGradient id="ini-oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d27a"/><stop offset=".5" stop-color="#D2A63F"/><stop offset="1" stop-color="#9c7624"/></linearGradient>
+    </defs>
+    <circle cx="200" cy="165" r="160" fill="url(#ini-brillo)"/>
+    <rect x="28" y="314" width="344" height="14" rx="4" fill="url(#ini-metal)" stroke="#0A0518" stroke-width="3"/>
+    <g>
+        <path d="M84 160 L36 318 L132 318 Z" fill="url(#ini-metal)" stroke="#0A0518" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M84 196 L54 304 L114 304 Z" fill="#17123A" stroke="#0A0518" stroke-width="2"/>
+        <path d="M89 228 L75 256 L83 256 L78 280 L94 248 L86 248 Z" fill="#D2A63F"/>
+        <circle cx="84" cy="168" r="7" fill="#AEB3C0" stroke="#0A0518" stroke-width="2.5"/></g><g>
+        <path d="M316 160 L268 318 L364 318 Z" fill="url(#ini-metal)" stroke="#0A0518" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M316 196 L286 304 L346 304 Z" fill="#17123A" stroke="#0A0518" stroke-width="2"/>
+        <path d="M321 228 L307 256 L315 256 L310 280 L326 248 L318 248 Z" fill="#D2A63F"/>
+        <circle cx="316" cy="168" r="7" fill="#AEB3C0" stroke="#0A0518" stroke-width="2.5"/></g>
+    <circle cx="200" cy="165" r="108" fill="#211A4D" stroke="#0A0518" stroke-width="4"/>
+    <g class="giro">
+      <g stroke="#7A4DF0" stroke-width="6" stroke-linecap="round"><line x1="222.0" y1="165.0" x2="292.0" y2="165.0"/><line x1="215.6" y1="180.6" x2="265.1" y2="230.1"/><line x1="200.0" y1="187.0" x2="200.0" y2="257.0"/><line x1="184.4" y1="180.6" x2="134.9" y2="230.1"/><line x1="178.0" y1="165.0" x2="108.0" y2="165.0"/><line x1="184.4" y1="149.4" x2="134.9" y2="99.9"/><line x1="200.0" y1="143.0" x2="200.0" y2="73.0"/><line x1="215.6" y1="149.4" x2="265.1" y2="99.9"/></g>
+      <circle cx="200" cy="165" r="92" fill="none" stroke="#7A4DF0" stroke-width="5"/>
+      <g fill="none" stroke="#49A6FF" stroke-width="1.6" stroke-opacity=".8"><polyline points="150,110 178,92 214,104 244,128 256,170 232,214 190,236 156,218 140,176"/></g>
+      <g fill="#fff"><circle cx="150" cy="110" r="2.6"/><circle cx="178" cy="92" r="2.6"/><circle cx="214" cy="104" r="2.6"/><circle cx="244" cy="128" r="2.6"/><circle cx="256" cy="170" r="2.6"/><circle cx="232" cy="214" r="2.6"/><circle cx="190" cy="236" r="2.6"/><circle cx="156" cy="218" r="2.6"/><circle cx="140" cy="176" r="2.6"/></g>
+    </g>
+    <path d="M200 61 A104 104 0 1 1 199.9 61 Z M200 101 A64 64 0 1 0 200.1 101 Z" fill="#CFC6EF" fill-opacity=".16" fill-rule="evenodd"/>
+    <circle cx="200" cy="165" r="104" fill="none" stroke="url(#ini-oro)" stroke-width="9"/>
+    <circle cx="200" cy="165" r="64" fill="none" stroke="#CFC6EF" stroke-opacity=".5" stroke-width="2"/>
+    <circle cx="200" cy="165" r="34" fill="#49A6FF" fill-opacity=".25"/>
+    <circle cx="200" cy="165" r="22" fill="url(#ini-nucleo)" stroke="#D2A63F" stroke-width="3"/>
+    <path d="M140 92 A90 90 0 0 1 238 82" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round"/></svg>
+    <span class="inicio-eyebrow">EL ARTEFACTO CÓSMICO</span>
+    <h1 class="inicio-titulo">AGENTE NANO</h1>
+    <p class="inicio-sub">La rueda de recuperación cósmica</p>
+    <a class="btn primary grande" href="#/elegir">Comenzar</a>
+    <a class="enlace" href="manual.html">Manual de usuario</a>
+  </div>
+  <button class="btn sonido" type="button" data-sonido>🔊 Sonido: sí</button>
+</section>
+
+<!-- ============ S02 · ELEGIR ============ -->
+<section class="screen" id="s-elegir" aria-label="Qué quieres explorar">
+  <header class="topbar">
+    <a class="btn" href="#/inicio">← Volver</a>
+    <span class="titulo">Agente <span>Nano</span></span>
+    <a class="btn icono" href="manual.html" aria-label="Manual de usuario" title="Manual de usuario">?</a>
+    <button class="btn icono" type="button" data-sonido data-icono aria-label="Sonido" title="Sonido">🔊</button>
+  </header>
+  <main class="elegir">
+    <h2>¿Qué quieres explorar?</h2>
+    <div class="elegir-grid">
+      <a class="tarjeta-grande" href="#/artefacto/general">
+        <div class="tarjeta-img">
+          <svg viewBox="0 0 400 340" aria-hidden="true"><defs>
+      <radialGradient id="ele-brillo"><stop offset="0" stop-color="#49A6FF" stop-opacity=".55"/><stop offset="1" stop-color="#7A4DF0" stop-opacity="0"/></radialGradient>
+      <radialGradient id="ele-nucleo"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#bfe0ff"/><stop offset=".7" stop-color="#49A6FF"/><stop offset="1" stop-color="#7A4DF0"/></radialGradient>
+      <linearGradient id="ele-metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dce4"/><stop offset="1" stop-color="#8a8fa0"/></linearGradient>
+      <linearGradient id="ele-oro" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d27a"/><stop offset=".5" stop-color="#D2A63F"/><stop offset="1" stop-color="#9c7624"/></linearGradient>
+    </defs>
+    <circle cx="200" cy="165" r="160" fill="url(#ele-brillo)"/>
+    <rect x="28" y="314" width="344" height="14" rx="4" fill="url(#ele-metal)" stroke="#0A0518" stroke-width="3"/>
+    <g>
+        <path d="M84 160 L36 318 L132 318 Z" fill="url(#ele-metal)" stroke="#0A0518" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M84 196 L54 304 L114 304 Z" fill="#17123A" stroke="#0A0518" stroke-width="2"/>
+        <path d="M89 228 L75 256 L83 256 L78 280 L94 248 L86 248 Z" fill="#D2A63F"/>
+        <circle cx="84" cy="168" r="7" fill="#AEB3C0" stroke="#0A0518" stroke-width="2.5"/></g><g>
+        <path d="M316 160 L268 318 L364 318 Z" fill="url(#ele-metal)" stroke="#0A0518" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M316 196 L286 304 L346 304 Z" fill="#17123A" stroke="#0A0518" stroke-width="2"/>
+        <path d="M321 228 L307 256 L315 256 L310 280 L326 248 L318 248 Z" fill="#D2A63F"/>
+        <circle cx="316" cy="168" r="7" fill="#AEB3C0" stroke="#0A0518" stroke-width="2.5"/></g>
+    <circle cx="200" cy="165" r="108" fill="#211A4D" stroke="#0A0518" stroke-width="4"/>
+    <g>
+      <g stroke="#7A4DF0" stroke-width="6" stroke-linecap="round"><line x1="222.0" y1="165.0" x2="292.0" y2="165.0"/><line x1="215.6" y1="180.6" x2="265.1" y2="230.1"/><line x1="200.0" y1="187.0" x2="200.0" y2="257.0"/><line x1="184.4" y1="180.6" x2="134.9" y2="230.1"/><line x1="178.0" y1="165.0" x2="108.0" y2="165.0"/><line x1="184.4" y1="149.4" x2="134.9" y2="99.9"/><line x1="200.0" y1="143.0" x2="200.0" y2="73.0"/><line x1="215.6" y1="149.4" x2="265.1" y2="99.9"/></g>
+      <circle cx="200" cy="165" r="92" fill="none" stroke="#7A4DF0" stroke-width="5"/>
+      <g fill="none" stroke="#49A6FF" stroke-width="1.6" stroke-opacity=".8"><polyline points="150,110 178,92 214,104 244,128 256,170 232,214 190,236 156,218 140,176"/></g>
+      <g fill="#fff"><circle cx="150" cy="110" r="2.6"/><circle cx="178" cy="92" r="2.6"/><circle cx="214" cy="104" r="2.6"/><circle cx="244" cy="128" r="2.6"/><circle cx="256" cy="170" r="2.6"/><circle cx="232" cy="214" r="2.6"/><circle cx="190" cy="236" r="2.6"/><circle cx="156" cy="218" r="2.6"/><circle cx="140" cy="176" r="2.6"/></g>
+    </g>
+    <path d="M200 61 A104 104 0 1 1 199.9 61 Z M200 101 A64 64 0 1 0 200.1 101 Z" fill="#CFC6EF" fill-opacity=".16" fill-rule="evenodd"/>
+    <circle cx="200" cy="165" r="104" fill="none" stroke="url(#ele-oro)" stroke-width="9"/>
+    <circle cx="200" cy="165" r="64" fill="none" stroke="#CFC6EF" stroke-opacity=".5" stroke-width="2"/>
+    <circle cx="200" cy="165" r="34" fill="#49A6FF" fill-opacity=".25"/>
+    <circle cx="200" cy="165" r="22" fill="url(#ele-nucleo)" stroke="#D2A63F" stroke-width="3"/>
+    <path d="M140 92 A90 90 0 0 1 238 82" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <span class="tarjeta-titulo">Artefacto de Nano</span>
+        <span class="tarjeta-desc">Usa los poderes de Nano para explorar su rueda y descubre los gráficos escondidos en los personajes de la historia.</span>
+        <span class="tarjeta-ir">Explorar →</span>
+      </a>
+      <a class="tarjeta-grande" href="#/juego">
+        <div class="tarjeta-img">
+          <svg viewBox="0 0 400 340" aria-hidden="true">
+            <defs><radialGradient id="jg-n"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#49A6FF"/><stop offset="1" stop-color="#7A4DF0"/></radialGradient></defs>
+            <circle cx="200" cy="160" r="128" fill="#211A4D" stroke="#D2A63F" stroke-width="10"/>
+            <circle cx="200" cy="160" r="112" fill="none" stroke="#6f6b93" stroke-width="16"/>
+            <g stroke="#7A4DF0" stroke-width="7" stroke-linecap="round"><line x1="200" y1="62" x2="200" y2="258"/><line x1="102" y1="160" x2="298" y2="160"/><line x1="131" y1="91" x2="269" y2="229"/><line x1="269" y1="91" x2="131" y2="229"/></g>
+            <circle cx="200" cy="160" r="22" fill="url(#jg-n)" stroke="#D2A63F" stroke-width="3"/>
+            <g stroke="#CFC6EF" stroke-width="5" stroke-linecap="round" opacity=".7"><line x1="88" y1="236" x2="128" y2="236"/><line x1="70" y1="252" x2="122" y2="252"/></g>
+            <g transform="translate(190 258) scale(1.15)" stroke="#0A0518" stroke-width="3">
+              <ellipse cx="-12" cy="-2" rx="7" ry="4.5" fill="#e0b08f"/><ellipse cx="18" cy="-4" rx="7" ry="4.5" fill="#e0b08f"/>
+              <ellipse cx="0" cy="-22" rx="34" ry="22" fill="#d99a5b"/>
+              <ellipse cx="20" cy="-30" rx="6" ry="15" fill="#7A4DF0" transform="rotate(14 20 -30)"/>
+              <ellipse cx="34" cy="-34" rx="17" ry="15" fill="#d99a5b"/>
+              <ellipse cx="27" cy="-49" rx="6" ry="7" fill="#d99a5b"/>
+              <circle cx="40" cy="-38" r="3.6" fill="#1a1030" stroke="none"/><circle cx="50" cy="-32" r="2.6" fill="#d4677a" stroke="none"/>
+            </g>
+            <path d="M300 60 L276 104 L292 104 L282 140 L316 92 L298 92 Z" fill="#D2A63F" stroke="#0A0518" stroke-width="3"/>
+          </svg>
+        </div>
+        <span class="tarjeta-titulo">Recarga cósmica</span>
+        <span class="tarjeta-desc">Minijuego: corre con Nano en su rueda lo más rápido que puedas para curarlo y recargar sus poderes.</span>
+        <span class="tarjeta-ir">Jugar →</span>
+      </a>
+      <a class="tarjeta-grande" href="#/datos">
+        <div class="tarjeta-img doble">
+          <svg viewBox="0 0 190 190" aria-hidden="true">
+            <rect x="6" y="6" width="178" height="178" rx="16" fill="#17123A" stroke="#2c2460" stroke-width="2"/>
+            <path d="M28 160 L168 160" stroke="#3a3175" stroke-width="2"/>
+            <rect x="36" y="104" width="22" height="56" rx="5" fill="#4DFF8F"/>
+            <rect x="68" y="62" width="22" height="98" rx="5" fill="#49A6FF"/>
+            <rect x="100" y="118" width="22" height="42" rx="5" fill="#D2A63F"/>
+            <rect x="132" y="38" width="22" height="122" rx="5" fill="#7A4DF0"/>
+          </svg>
+          <svg viewBox="0 0 190 190" aria-hidden="true">
+            <rect x="6" y="6" width="178" height="178" rx="16" fill="#17123A" stroke="#2c2460" stroke-width="2"/>
+            <path d="M6 72 L184 54 M6 132 L184 144 M70 6 L60 184 M132 6 L142 184" fill="none" stroke="#2c2460" stroke-width="8"/>
+            <path d="M24 24 L66 20 L60 70 L20 74 Z" fill="#FF3C5F" fill-opacity=".45"/>
+            <path d="M138 140 L180 146 L180 180 L144 180 Z" fill="#FF3C5F" fill-opacity=".25"/>
+            <path d="M95 52 C78 52 72 66 72 75 C72 94 95 118 95 118 C95 118 118 94 118 75 C118 66 112 52 95 52 Z" fill="#4DFF8F"/>
+            <circle cx="95" cy="75" r="8" fill="#0A0518"/>
+          </svg>
+        </div>
+        <span class="tarjeta-titulo">Gráficos y mapas</span>
+        <span class="tarjeta-desc">Los 6 gráficos y 2 mapas del caso de Nano, en un menú sencillo.</span>
+        <span class="tarjeta-ir">Ver todo →</span>
+      </a>
+    </div>
+  </main>
+</section>
+
+<!-- ============ S03–S07 · ARTEFACTO ============ -->
+<section class="screen" id="s-artefacto" aria-label="Artefacto de Nano">
+  <header class="topbar">
+    <a class="btn" href="#/elegir">← Volver</a>
+    <span class="titulo">La rueda de <span>Nano</span></span>
+    <a class="btn icono" href="manual.html" aria-label="Manual de usuario" title="Manual de usuario">?</a>
+    <a class="btn" href="#/inicio">Inicio</a>
+  </header>
+  <main class="artefacto">
+    <div class="visor" id="visor">
+      <div class="visor-etiqueta" id="visor-etiqueta">La rueda de Nano</div>
+      <div class="visor-cargando" id="visor-cargando">Cargando la rueda…</div>
+      <div class="visor-tooltip" id="visor-tooltip" hidden></div>
+      <div class="visor-etiquetas" id="visor-etiquetas" aria-hidden="true"></div>
+      <div class="visor-pines" id="visor-pines"></div>
+      <div class="globo" id="globo" hidden></div>
+      <div class="golpe" id="golpe" aria-hidden="true"></div>
+      <div class="visor-zoom" data-modo-solo="acercamiento">
+        <button class="btn" type="button" id="zoom-mas" aria-label="Acercar">+</button>
+        <button class="btn" type="button" id="zoom-menos" aria-label="Alejar">−</button>
+      </div>
+      <div class="visor-inset" data-modo-solo="acercamiento">
+        <span>Dónde está olfateando Nano</span>
+        <canvas id="mini-canvas" width="190" height="130"></canvas>
+      </div>
+      <div class="visor-inset" data-modo-solo="corte">
+        <span>Dónde cae el golpe</span>
+        <svg id="corte-indicador" viewBox="0 0 160 120" aria-hidden="true"></svg>
+      </div>
+      <div class="visor-pista" id="visor-pista">Arrastra para girar · rueda del mouse para acercar</div>
+    </div>
+
+    <aside class="panel">
+      <h3>Poderes de Nano</h3>
+      <nav class="opciones" aria-label="Modos de vista">
+        <a class="btn opcion" data-modo="general" href="#/artefacto/general">
+          <svg viewBox="0 0 26 26" aria-hidden="true"><ellipse cx="13" cy="13" rx="7" ry="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13 L13 3 M13 13 L19 13 M13 13 L13 23" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          La rueda de Nano</a>
+        <a class="btn opcion" data-modo="transparencia" href="#/artefacto/transparencia">
+          <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="3" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"/><rect x="9" y="9" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/></svg>
+          Mirada de luz</a>
+        <a class="btn opcion" data-modo="acercamiento" href="#/artefacto/acercamiento">
+          <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="11" cy="11" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5 L23 23" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          Súper olfato</a>
+        <a class="btn opcion" data-modo="corte" href="#/artefacto/corte">
+          <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 3 A10 10 0 0 1 13 23 Z" fill="currentColor" fill-opacity="0.3"/><circle cx="13" cy="13" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 1 L13 25" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/></svg>
+          Superfuerza</a>
+        <a class="btn opcion" data-modo="despiece" href="#/artefacto/despiece">
+          <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="2" y="7" width="5" height="12" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10.5" y="4" width="5" height="18" fill="none" stroke="currentColor" stroke-width="2"/><rect x="19" y="7" width="5" height="12" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Hipervelocidad</a>
+      </nav>
+      <hr>
+
+      <!-- Controles de cada modo -->
+      <div class="controles" data-controles="general">
+        <p class="rotulo">Mirar desde</p>
+        <div class="fila3">
+          <button class="btn" type="button" data-vista="frente">Frente</button>
+          <button class="btn" type="button" data-vista="lado">Lado</button>
+          <button class="btn" type="button" data-vista="arriba">Arriba</button>
+        </div>
+        <button class="btn ancho" type="button" data-vista="inicial">↺ Mirarla de lejos</button>
+        <p class="ayuda">Toca una pieza de la rueda para acercarte a ella.</p>
+        <a class="btn primary ancho boton-juego" href="#/juego">⚡ Jugar Recarga cósmica</a>
+        <hr>
+        <p class="rotulo">Historia escondida</p>
+        <p class="ayuda">Cada personaje alrededor de la rueda guarda un gráfico o un mapa. Pasa el cursor por encima y tócalo.</p>
+        <div class="descubiertos" id="descubiertos" aria-live="polite"></div>
+        <label class="check"><input type="checkbox" id="ver-historia" checked> Mostrar personajes</label>
+      </div>
+
+      <div class="controles" data-controles="transparencia">
+        <label class="rotulo" for="rango-transp">Intensidad de la luz</label>
+        <input id="rango-transp" type="range" min="0" max="100" value="65">
+        <div class="seg">
+          <button class="btn" type="button" data-transp="65">Media luz</button>
+          <button class="btn" type="button" data-transp="95">Luz total</button>
+        </div>
+        <label class="check"><input type="checkbox" id="resaltar" checked> Iluminar el corazón de la rueda</label>
+      </div>
+
+      <div class="controles" data-controles="acercamiento">
+        <label class="rotulo" for="pieza">¿Qué quieres olfatear?</label>
+        <select id="pieza"></select>
+        <p class="ayuda" id="pieza-desc"></p>
+        <label class="rotulo" for="rango-zoom">Qué tan cerca</label>
+        <input id="rango-zoom" type="range" min="1" max="5" step="0.1" value="3">
+      </div>
+
+      <div class="controles" data-controles="corte">
+        <p class="rotulo">Dirección del golpe</p>
+        <div class="seg">
+          <button class="btn" type="button" data-corte="longitudinal" aria-pressed="true">De lado</button>
+          <button class="btn" type="button" data-corte="transversal" aria-pressed="false">De frente</button>
+        </div>
+        <label class="rotulo" for="rango-corte">Dónde golpear</label>
+        <input id="rango-corte" type="range" min="0" max="100" value="50">
+        <label class="check"><input type="checkbox" id="rayado" checked> Mostrar las marcas del golpe</label>
+      </div>
+
+      <div class="controles" data-controles="despiece">
+        <div class="seg">
+          <button class="btn" type="button" data-despiece="explotado" aria-pressed="true">Volando</button>
+          <button class="btn" type="button" data-despiece="despiece" aria-pressed="false">En fila</button>
+        </div>
+        <label class="rotulo" for="rango-sep">Qué tan lejos vuelan</label>
+        <input id="rango-sep" type="range" min="0" max="100" value="100">
+        <div class="fila2">
+          <button class="btn" type="button" id="btn-armar">Armar</button>
+          <button class="btn" type="button" id="btn-explotar">¡A volar!</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</section>
+
+<!-- ============ S08 · GRÁFICOS Y MAPAS ============ -->
+<section class="screen" id="s-datos" aria-label="Gráficos y mapas">
+  <header class="topbar">
+    <a class="btn" href="#/elegir">← Volver</a>
+    <span class="titulo">Gráficos y mapas</span>
+    <a class="btn icono" href="manual.html" aria-label="Manual de usuario" title="Manual de usuario">?</a>
+    <a class="btn" href="#/inicio">Inicio</a>
+  </header>
+  <main class="datos">
+    <div class="datos-col">
+      <h2>Gráficos</h2>
+      <div class="datos-grid" id="grid-graficos"></div>
+    </div>
+    <div class="datos-col mapas">
+      <h2>Mapas</h2>
+      <div class="datos-grid una" id="grid-mapas"></div>
+    </div>
+    <p class="ayuda ancho-total">Toca una tarjeta para abrir el gráfico o el mapa.</p>
+  </main>
+</section>
+
+<!-- ============ S09–S10 · VER UN GRÁFICO O MAPA ============ -->
+<section class="screen" id="s-ver" aria-label="Ver gráfico o mapa">
+  <header class="topbar">
+    <a class="btn" href="#/datos">← Volver</a>
+    <span class="titulo">Gráficos y mapas</span>
+    <a class="btn icono" href="manual.html" aria-label="Manual de usuario" title="Manual de usuario">?</a>
+    <a class="btn" href="#/inicio">Inicio</a>
+  </header>
+  <main class="ver">
+    <aside class="lista">
+      <h3 id="lista-titulo">Gráficos</h3>
+      <nav id="lista-items" aria-label="Lista"></nav>
+      <hr>
+      <a class="btn ancho" id="lista-cambiar" href="#/datos">Ver mapas →</a>
+    </aside>
+    <div class="ver-principal">
+      <h2 id="ver-titulo"></h2>
+      <p class="ayuda" id="ver-sub"></p>
+      <iframe id="ver-frame" title="Gráfico o mapa" loading="lazy"></iframe>
+    </div>
+  </main>
+</section>
+
+<!-- ============ S06 · MINIJUEGO ============ -->
+<section class="screen" id="s-juego" aria-label="Minijuego Recarga cósmica">
+  <header class="topbar">
+    <a class="btn" href="#/elegir">← Volver</a>
+    <span class="titulo">Recarga <span>cósmica</span></span>
+    <a class="btn icono" href="manual.html#juego" aria-label="Manual de usuario" title="Manual de usuario">?</a>
+    <a class="btn" href="#/inicio">Inicio</a>
+  </header>
+  <main class="juego">
+    <div class="escenario" id="juego">
+      <canvas class="juego-lienzo" tabindex="-1" aria-label="Nano corriendo en su rueda"></canvas>
+
+      <div class="hud">
+        <div class="hud-caja">
+          <span class="hud-rot">Salud</span>
+          <div class="barra salud"><i id="j-salud"></i></div>
+        </div>
+        <div class="hud-caja hud-poderes" aria-label="Poderes">
+          <span class="poder" title="Súper olfato"><i>👃</i><span>Olfato</span></span>
+          <span class="poder" title="Hipervelocidad"><i>⚡</i><span>Velocidad</span></span>
+          <span class="poder" title="Superfuerza"><i>💪</i><span>Fuerza</span></span>
+          <b id="j-pct">0%</b>
+        </div>
+        <div class="hud-caja hud-tiempo">
+          <span class="hud-rot">Amanecer en</span>
+          <b id="j-tiempo">0:35</b>
+          <div class="barra noche"><i id="j-noche"></i></div>
+        </div>
+      </div>
+
+      <div class="velocimetro">
+        <span class="hud-rot">Velocidad</span>
+        <div class="vel-pista">
+          <i id="j-vel"></i>
+          <span class="zona" style="left:50%"><em>Zona de carga</em></span>
+          <span class="zona rapido" style="left:70%"><em>¡Tornillos!</em></span>
+        </div>
+      </div>
+
+      <div class="juego-aviso" id="j-aviso" aria-live="assertive"></div>
+
+      <div class="juego-capa" id="j-intro">
+        <div class="tarjeta-juego">
+          <span class="sobre">MINIJUEGO</span>
+          <h2>Recarga cósmica</h2>
+          <p>Nano volvió herido del parque. Corre con él en su rueda: solo cuando va <b>muy rápido</b> la energía cósmica lo cura y le devuelve los poderes. ¡Hazlo antes del amanecer!</p>
+          <div class="como">
+            <div class="como-pc"><span class="como-t">💻 En computador</span>
+              <span><kbd>←</kbd> <kbd>→</kbd> muy rápido para correr</span>
+              <span><kbd>Espacio</kbd> para saltar los tornillos</span></div>
+            <div class="como-movil"><span class="como-t">📱 En celular</span>
+              <span>Toca <b>Correr</b> muy rápido</span>
+              <span>Toca <b>¡Saltar!</b> cuando venga un tornillo</span></div>
+          </div>
+          <p class="record" id="j-record"></p>
+          <button class="btn primary grande" type="button" id="j-empezar">¡A correr!</button>
+        </div>
+      </div>
+      <div class="juego-capa" id="j-fin" hidden><div class="tarjeta-juego"></div></div>
+    </div>
+
+    <div class="juego-controles">
+      <button class="pad correr" type="button" id="j-correr"><span>🐾 Correr</span><small>← → · A D</small></button>
+      <button class="pad saltar" type="button" id="j-saltar"><span>⤴ ¡Saltar!</span><small>Espacio</small></button>
+    </div>
+  </main>
+</section>
+
+<!-- ============ Ventana que se despliega desde un personaje ============ -->
+<div class="emergente" id="emergente" hidden>
+  <div class="emergente-caja" id="emergente-caja" role="dialog" aria-modal="true" aria-labelledby="emergente-titulo">
+    <header>
+      <div class="emergente-texto">
+        <span class="emergente-tipo" id="emergente-tipo"></span>
+        <h2 id="emergente-titulo"></h2>
+      </div>
+      <a class="btn" id="emergente-ir" href="#/datos">Ver en Gráficos y mapas</a>
+      <button class="btn" type="button" id="emergente-cerrar">✕ Cerrar</button>
+    </header>
+    <iframe id="emergente-frame" title="Gráfico o mapa"></iframe>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
